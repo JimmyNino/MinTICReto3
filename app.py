@@ -29,7 +29,7 @@ def crear_usuario():
     numero=escape(request.values["txtnum"])
     nom_usu=escape(request.values["txtnomusu"])
     contraseña=escape(request.values["txtcon"])
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         encrp = hashlib.sha256(contraseña.encode('utf-8'))
         pass_enc = encrp.hexdigest()
         cur=con.cursor()
@@ -65,7 +65,7 @@ def login():
 # verificar datos
     nom_usu=escape(request.values["txtnom_usu"])
     contraseña=escape(request.values["contra"])
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row #list base datos
         encrp = hashlib.sha256(contraseña.encode('utf-8'))
         pass_enc = encrp.hexdigest()
@@ -101,7 +101,7 @@ def login():
 def inicio():
     if 'user' in session:
         if session['roll']== "1":
-            with sqlite3.connect("basedatos(1).db") as con:
+            with sqlite3.connect("basedatos.db") as con:
                 con.row_factory=sqlite3.Row #list base datos
                 cur=con.cursor()
                 # roll 1=usuario 2=administrador 3=super administrador
@@ -128,11 +128,11 @@ def inicio():
 # ELIMINACON DEL mensaje
 def mensajes_eliminar():
     publicacion=escape(request.values[""])
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
             curso = con.cursor()
             curso.execute("DELETE FROM publicaion WHERE imagen = ?", [publicacion])
             con.commit()
-            return("/instagram2/basedatos(1).db/publicacion")
+            return("/instagram2/basedatos.db/publicacion")
     return("No se puede eliminar la imagen")
         
 #==============buscar publicacion para eliminar============
@@ -142,7 +142,7 @@ def buscar_p():
         if session['roll']== "1":
             return redirect("/inicio")
         elif session['roll']== "2" or session['roll']== "3":
-            with sqlite3.connect("basedatos(1).db") as con:
+            with sqlite3.connect("basedatos.db") as con:
                 con.row_factory=sqlite3.Row #list base datos
                 cur=con.cursor()
                 cur.execute("SELECT * FROM publicacion")
@@ -160,7 +160,7 @@ def buscar_p():
 @app.route("/buscar/publiE",methods=["GET","POST"])
 def buscar_publiE():
     buscar_nom_publi=request.values["txtbpubli"]
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row #lista de diccionario
                 # crea un cursor para manipular la base de datos
         cur=con.cursor()
@@ -175,7 +175,7 @@ def buscar_publiE():
 #=================== ELIMINACON DE LA PUBLICACION===inici
 @app.route('/publi/eliminar/<int:id>' ,methods=["GET","POST"])
 def eliminar_publi(id):
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row 
         cur=con.cursor()
         cur.execute("SELECT imagen FROM publicacion WHERE  id_publi= ?", [id])
@@ -209,7 +209,7 @@ def eliminar_usu():
 @app.route("/buscar/usuE",methods=["GET","POST"])
 def eliminar_usuario():
     buscar_nom_usu=request.values["txtbusu"]
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row #lista de diccionario
                 # crea un cursor para manipular la base de datos
         cur=con.cursor()
@@ -224,7 +224,7 @@ def eliminar_usuario():
 
 @app.route("/usuario/eliminar/<int:id>", methods=["GET", "POST"])
 def usuario_eliminar(id):
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         cur = con.cursor()
         cur.execute("DELETE FROM usuario WHERE id_usu = ?", [id])
         con.commit()#lista de diccionario
@@ -233,7 +233,7 @@ def usuario_eliminar(id):
 # =========== Editar roll===================
 @app.route("/usuario/editarroll/<int:id>", methods=["GET", "POST"])
 def usuario_editroll(id):
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row
         cur = con.cursor()
         cur.execute("SELECT * FROM usuario WHERE id_usu = ?", [id])
@@ -247,7 +247,7 @@ def usuario_editroll(id):
 def usuario_guardarroll(id):
     id_usu=request.values["txtid"]
     roll_usu=request.values["txtroll"]
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         cur = con.cursor()
         cur.execute("UPDATE usuario SET roll=?  WHERE id_usu=?", [roll_usu,id_usu])
         con.commit()        
@@ -295,7 +295,7 @@ def crearpublicacion():
         now=datetime.now()
         tiempo=now.strftime("%Y%H%M%S")+"_"
         fecha=tiempo
-        with sqlite3.connect("basedatos(1).db") as con:
+        with sqlite3.connect("basedatos.db") as con:
             con.row_factory=sqlite3.Row
             cur=con.cursor()
 
@@ -337,7 +337,7 @@ def configuracionUsu():
     correo=escape(request.values["tcorreo"])
     numero=escape(request.values["tnumero"])
     # crear numbre de usuario antiguo
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row #lista de diccionario
         # crea un cursor para poder hacer manipulacion a la base de datos
         cur=con.cursor()
@@ -367,7 +367,7 @@ def configuracionContra():
     ccontra_RN=escape(request.values["tNRcon"])
     encrip = hashlib.sha256(cont_A.encode('utf-8'))
     pass_enc = encrip.hexdigest()
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         #Cambiar Contraseña
         con.row_factory=sqlite3.Row #lista de diccionario
                 # crea un cursor para manipular la base de datos
@@ -426,7 +426,7 @@ def mensajesUsu():
     nom_usu_des=escape(request.values["tDNomusu"])
     hora=escape(request.values["date"])
     cont_msj=escape(request.values["tContmsj"])
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row
         curso=con.cursor()
         row=curso.fetchone()
@@ -446,7 +446,7 @@ def mensajesUsu():
 def mensajes_eliminar():
     cont_msj=escape(request.values["tContmsj"])
     
-    with sqlite3.connect("basedatos(1).db") as con:
+    with sqlite3.connect("basedatos.db") as con:
             curso = con.cursor()
             curso.execute("DELETE FROM mensajes WHERE cont_msj = ?", [cont_msj])
             con.commit()
