@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dashboard Administrativo</title>
+     <link rel="stylesheet" href="../static/css/admin.css">
+     <script src="https://kit.fontawesome.com/e4d2989fa4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Administrador</h1>
+     <!-- menu -->
+     <header>
+          <nav class="navegacion">
+              <ul class="menu">
+      
+                  <li class="espacio"><i class="fas fa-cog"><a href="/configuracion" target="_blank" rel="noopener noreferrer">Configuración</a></i></li>
+      
+      
+                  <li class="espacio"><i class="fas fa-search">Buscar </i> 
+      
+                      <ul class="submenu">
+                          <li><a href="/buscar/publi">publicacion</a></li>
+                          <li><a href="/eliminar/usuario">usuario</a></li>
+                      </ul>
+                  </li>
+                  <li class="espacio">
+                    <i class="fas fa-sign-out-alt"><a href="/logout" target="_blank" rel="noopener noreferrer">Cerrar secion</a></i>
+                  </li>
+      
+                   <li class="espacio">
+                       <i class="fas fa-home" ><a href="/inicio" target="_blank" rel="noopener noreferrer">Inicio</a></i>
+                  </li>
+              </ul>
+         </nav >
+      </header>
+    <form action="/buscar/usuE" method="post">
+        <header class="buscar">
+            
+                <div>
+                    <input type="search" id="txtbusu" name="txtbusu" placeholder="Buscar nombre de usuario a eliminar" required >
+                    <br>
+                </div>    
+        </header>
+                    <input type="submit" value="Buscar">
+                    
+                    <table>
+                        <thead>
+                            <style>td{border-color: black;
+                                border-style: groove;
+                                padding: 10px;}
+
+                        </style>
+                            <tr>
+                            <td>nombre de usuario</td>
+                               <td>telefono</td> 
+                               <td>nombre</td> 
+                               <td>correo</td>
+                               <td>id</td>  
+                               <td>Eliminar</td>
+                               <td>Editar</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                               {% for dato in datos %} 
+                                <tr>
+                                    <!--nombre de usuario--><td>{{dato.4 }}</td>
+                                    <!--telefono--><td>{{dato.6 }}</td>
+                                    <!--nombre--><td>{{dato.1}}</td> 
+                                    <!--correo--><td>{{dato.2 }}</td>
+                                         <!--id--><td>{{dato.0 }}</td> 
+                                        <!--id--><td><a href="/usuario/eliminar/{{ dato.0 }}">Eliminar </a></td>
+                                        <!--id--><td><a href="/usuario/editarroll/{{ dato.0 }}">Editar roll</a></td>
+
+                                    <!-- <td>{{dato.7}}</td> -->
+
+                                </tr>
+                               {%endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+                
+    </form>       
+       
+        <br>
+        <div>
+          {% with messages= get_flashed_messages()%}
+          {% if messages %}
+          {% for message in messages %}
+          <p>{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          
+        </div>
+</body>
+</html>

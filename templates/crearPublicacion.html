@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear publicación</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+  <div class="menu">
+    <div class="container container2">
+      <div class="nav">
+        <img src="../static/img/social-design-girls-name.png">
+        <nav>
+          <ul>
+            <li><a href="/configuracion"><span class="material-icons">home</span></a></li>
+            <li><a href="/mensajes/Usu"><span class="material-icons">inbox</span></a></li>
+            <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
+            <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
+            <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
+            <li><a href="/crearpublicacion"><span class="material-icons">add</span></a></li>
+            <li><a href="/logout"><span class="material-icons">logout</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+     <div  class="crear">
+      
+      <form action="/crear_publicacion"  method="post" enctype = "multipart/form-data">
+        <div class="contenedor">
+            <h2>crear publicación</h2>
+            <br>
+            <div>
+
+               <label for="">nombre de publicación</label>
+               <input type="text" name="tituloptxt" id="tituloptxt" placeholder="escribe nombre de publicación" required>
+               <br>
+               <!----------- img------------->
+               <div class="cont-img">
+                   <div class="card">
+                       <img id="imp_preview">
+                       <div class="card-foter">
+                           <input type="file" id="img-uploader" name="img-uploader" >
+                       </div>
+                   </div>
+               </div>
+               <br>
+               <label for="">contenido de la publicación: </label> <textarea name="destxt" id="destxt" placeholder="Descripcion de publicación" required ></textarea>
+               <br>
+               <label for="">fecha de la publicación : </label><h5 id="fecha" name="fecha" > <script>(function(){
+                var fecha=new Date();
+                m=fecha.getMonth();
+                mo=m+1
+                document.write(fecha.getDate()+"/"+mo+"/"+fecha.getFullYear());
+                }())</script></h5>
+               <input type="submit" value="publicar">
+            </div>
+          {% with messages= get_flashed_messages()%}
+          {% if messages %}
+          {% for message in messages %}
+          <p>{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+        </div>
+    </form>   
+     </div>
+</body>
+</html>

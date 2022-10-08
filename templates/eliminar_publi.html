@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard Administrativo</title>
+        <link rel="stylesheet" href="../static/css/admin.css">
+        <script src="https://kit.fontawesome.com/e4d2989fa4.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Administrador</h1>
+        <!-- menu -->
+        <header>
+            <nav class="navegacion">
+                <ul class="menu">
+        
+                    <li class="espacio"><i class="fas fa-cog"><a href="/configuracion" target="_blank" rel="noopener noreferrer">Configuración</a></i></li>
+        
+        
+                    <li class="espacio"><i class="fas fa-search">Buscar </i> 
+        
+                        <ul class="submenu">
+                            <li><a href="/buscar/publiE">publicacion</a></li>
+                            <li><a href="/eliminar/usuario">usuario</a></li>
+                        </ul>
+                    </li>
+                    <li class="espacio">
+                        <i class="fas fa-sign-out-alt"><a href="/crear/publicacion" target="_blank" rel="noopener noreferrer">Cerrar secion</a></i>
+                    </li>
+        
+                    <li class="espacio">
+                        <i class="fas fa-home" ><a href="/inicio" target="_blank" rel="noopener noreferrer">Inicio</a></i>
+                    </li>
+                </ul>
+            </nav >
+        </header>
+
+        <form action="/buscar/publiE" method="post" >
+            <header class="buscar">
+                
+                    <div>
+                        <input type="search" id="txtbpubli" name="txtbpubli" placeholder="Buscar nombre de publicacion a eliminar" required >
+                        <br>
+                    </div>    
+            </header>
+                        <input type="submit" value="Buscar">
+                        
+                        <table>
+                            <thead>
+                                <style>td{border-color: black;
+                                    border-style: groove;
+                                    padding: 10px;}
+
+                            </style>
+                                <tr>
+                                <td>id del usuario</td>
+                                <td>nombre publicacion</td> 
+                                <td>imagen</td>
+                                <td>Descripcion publicacion</td>  
+                                <td>Eliminar</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for publicacion in publicaciones %} 
+                                    <tr>
+                                        <!--id del usuario--><td>{{ publicacion.1 }}</td>
+                                        <!--nombre publicacion--><td>{{ publicacion.0 }}</td>
+                                        <!--imagen--><td>
+                                            <img  class="img-thumbnail" width="100px" src="{{ url_for('imagenes',nombredelafoto=publicacion.2) }}" alt="">
+                                           </td> 
+                                        <!--Descripcion publicacion--><td>{{ publicacion.3 }}</td>
+                                            <!--id--><td><a href="/publi/eliminar/{{ publicacion.1 }}">Eliminar </a></td>
+
+                                    </tr>
+                                {%endfor %}
+                            </tbody>
+                        </table>
+                        <br>
+                    
+        </form>       
+        
+            <br>
+            <div>
+            {% with messages= get_flashed_messages()%}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            
+            </div>
+    </body>
+</html>

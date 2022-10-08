@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dashboard Administrativo</title>
+     <link rel="stylesheet" href="../static/css/admin.css">
+     <script src="https://kit.fontawesome.com/e4d2989fa4.js" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Super Administrador</h1>
+     <!-- menu -->
+     <header>
+          <nav class="navegacion">
+              <ul class="menu">
+      
+                  <li class="espacio"><i class="fas fa-cog"><a href="/configuracion"  rel="noopener noreferrer">Configuración</a></i></li>
+      
+      
+                  <li class="espacio"><i class="fas fa-search">Eliminar</i> 
+      
+                      <ul class="submenu">
+                          <li><a href="/buscar/publi">publicacion</a></li>
+                          <li><a href="/eliminar/usuario">usuario</a></li>
+                      </ul>
+                  </li>
+                  <li class="espacio">
+                    <i class="fas fa-sign-out-alt"><a href="/logout"  rel="noopener noreferrer">Cerrar secion</a></i>
+                  </li>
+      
+                   <li class="espacio">
+                       <i class="fas fa-home" ><a href="/admin"  rel="noopener noreferrer">Inicio</a></i>
+                  </li>
+              </ul>
+         </nav >
+      </header>
+
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+      <script>
+        // === include 'setup' then 'config' above ===
+        const labels = [
+        'lunes',
+        'martes',
+        'miercoles',
+        'jueves',
+        'viernes',
+        'sabado',
+        'domingo'
+      ];
+      
+      const data = {
+        labels: labels,
+        datasets: [{
+          label: 'visualizaciones de usuarios',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [0, 5, 15, 12, 20, 15, 25,30],
+          with:1000,
+        }]
+      };
+      const config = {
+          type: 'line',
+          data: data,
+          options: {}
+        };
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+      </script>
+
+</body>
+</html>

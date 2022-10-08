@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajería</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/instagram2/instagram2/static/css/style.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
+    <link rel="stylesheet" href="./styles/Noto_Sans_Mono/NotoSansMono-VariableFont_wdth,wght.ttf">
+</head>
+<body>
+    <div class="menu">
+        <div class="container container2">
+          <div class="nav">
+            <img src="../static/img/social-design-girls-name.png">
+            <nav>
+              <ul>
+                <li><a href="/inicio"><span class="material-icons">home</span></a></li>
+                <li><a href="/mensajes"><span class="material-icons">inbox</span></a></li>
+                <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
+                <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
+                <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
+                <li><a href="/crearpublicacion"><span class="material-icons">add</span></a></li>
+                <li><a href="/logout"><span class="material-icons">logout</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div id="msj">
+        <div id="caja-chat">
+          <div id="chat">
+            <div id="datos-chat">
+              <span style="color:#1c62c4">Laura:</span>
+              <span style="color: darkgray;">Hola, Cómo estás?</span>
+              <span style="color: black;">10:04am</span>
+              <form method="post" action="mensajes/Usu">
+                <textarea name="mensaje" placeholder="Ingresa tu mensaje"></textarea>
+                <input required type="submit" name="enviar" value="Enviar">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

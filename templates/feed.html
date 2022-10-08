@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/style.css" />
+  <title>Inicio</title>
+  <style>
+    .container2 {
+      max-width: 900px !important;
+    }
+    .box {
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <div class="container container2">
+      <div class="nav">
+        <img src="../static/img/social-design-girls-name.png">
+        <nav>
+          <ul>
+            <li><a href="/inicio"><span class="material-icons">home</span></a></li>
+            <li><a href="/mensajes"><span class="material-icons">inbox</span></a></li>
+            <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
+            <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
+            <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
+            <li><a href="/crearpublicacion"><span class="material-icons">add</span></a></li>
+            <li><a href="/logout"><span class="material-icons">logout</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  {% for dato in datos %}
+    <br>
+      <div class="container">
+        <div class="box">
+          <div class="info-post">
+            <img class="pic" src="https://cdn.iconscout.com/icon/free/png-256/account-avatar-profile-human-man-user-30448.png" alt="">
+            <p class="username">midudev</p>
+            <a href="#"><span class="material-icons">more_vert</span></a>
+          </div>
+          <div class="info-content">
+            <img width="500" src="{{ url_for('imagenes',nombredelafoto=dato.2) }}" alt="">
+          </div>
+          <div  class="info-actions">
+            <ul>
+              <li><a href="#"><span class="material-icons">favorite_border</span></a></li>
+              <li><a href="#"><span class="material-icons">insert_comment</span></a></li>
+              <li><a href="#"><span class="material-icons">send</span></a></li>
+            </ul>
+            <p class="likes"><strong>1.000 Me gusta</strong></p>
+            <p class="descriptions">
+              <strong> {{dato.0}}</strong>
+              <br>
+             {{dato.3}}
+            </p>
+          </div>
+          <div class="info-comments pdt0">
+            <p>
+              <strong>laura_pra17</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ea et quae, quod quis tempora corporis aut explicabo.
+            </p>
+          </div>
+        </div>
+      </div>
+    <br>
+
+  {% endfor %}
+
+  
+
+  
+</body>
+
+</html>

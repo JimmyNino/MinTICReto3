@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e4d2989fa4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloBP.css') }}" type="text/css">
+    <title>Buscar publicacion</title>
+</head>
+<body>
+     <!-- titulo -->
+ <h1>Social Lampropeltis alterna- Perfil</h1>  
+
+ <!-- menu -->
+ <header>
+     <nav class="navegacion">
+         <ul class="menu">
+ 
+             <li class="espacio"><i class="fas fa-cog"><a href="/configuracion" target="_blank" rel="noopener noreferrer">Configuración</a></i></li>
+ 
+             <li class="espacio"><i class="fas fa-user"><a href="/perfil/usuario" target="_blank" rel="noopener noreferrer">Perfil Usuario</a></i></li>
+ 
+             <li class="espacio"><i class="fas fa-search">Buscar</i> 
+ 
+                 <ul class="submenu">
+                     <li><a href="/buscar/publi">publicacion</a></li>
+                     <li><a href="/buscar/Usu">usuario</a></li>
+                 </ul>
+             </li>
+             <li class="espacio">
+                 <i class="fas fa-comment-alt"><a href="/mensajes/Usu" target="_blank" rel="noopener noreferrer">Mensajes</a></i>
+             </li>
+             <li class="espacio">
+                  <i class="fas fa-plus"><a href="/crear/publicacion" target="_blank" rel="noopener noreferrer">Crear publicacion</a></i>
+             </li>
+ 
+              <li class="espacio">
+                  <i class="fas fa-home" ><a href="/inicio" target="_blank" rel="noopener noreferrer">Inicio</a></i>
+             </li>
+         </ul>
+    </nav >
+ </header>
+ <!-- buscar usuario -->
+ <header class="buscar">
+     <input type="search" id="input-search" placeholder="Buscar aqui">
+     <div class="content-search">
+         <div class="content-table">
+         <table>
+             <thead>
+                 <tr>
+                     <td></td>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td><a href="#">paisajes</a></td>
+                 </tr>
+                 <tr>
+                     <td><a href="#">dibujos</a></td>
+                 </tr><tr>
+                     <td><a href="#">gatos</a></td>
+                 </tr><tr>
+                     <td><a href="#">imagenes</a></td>
+                 </tr><tr>
+                     <td><a href="#">nuevo</a></td>
+                 </tr><tr>
+                     <td><a href="#">fotos</a></td>
+                 </tr><tr>
+                     <td><a href="#">grndfj</a></td>
+                 </tr><tr>
+                     <td><a href="#">principio</a></td>
+                 </tr><tr>
+                     <td><a href="#">usuario</a></td>
+                 </tr><tr>
+                     <td><a href="#">ropa</a></td>
+                 </tr>
+             </tbody>
+         </table>
+         </div>
+     </div>
+ </header>
+ 
+ <!-- publicacion1 -->
+ 
+ <section class="post_list">
+    <div class="cotent">
+         <article class="post">
+             <div class="post-head">
+                 nombre usu <a href="">img usu</a>
+                 <div class="img-1"></div>
+                 <div class="post-body">
+                    
+                    <header>
+                        <nav class="nav">
+                            <ul class="men" >
+                                <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
+                                <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
+                                    <ul class="submen">
+                                        <!-- <li>configurar publicacion</li>
+                                        <li>eliminar publicacion</li> -->
+                                        <li>denunciar publicacion</li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Enviar<i class="fas fa-paper-plane"></i></a></li>
+                    
+                            </ul>
+                        </nav>
+                    </header>  
+                    <samp>5,septiembre 2019 </samp>
+                    <h2>pulicacion</h2>
+                     <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
+                    <a href="" class="post_usu">leer mas..</a>
+                    <div class="mensaje">
+                        <input type="text" value="" placeholder="Escribe un Comentario">
+                        <input type="button" value="Enviar" style=" border:solid; ">
+                    </div>
+                 </div>
+             </div>
+         </article>
+ 
+         <!-- segudo articulo -->
+         <article class="post">
+             <div class="post-head">
+                 nombre usu <a href="">img usu </a>
+                 <div class="img-2"></div>
+                <div class="post-body">
+                    <header>
+                        <nav class="nav">
+                            <ul class="men" >
+                                <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
+                                <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
+                                    <ul class="submen">
+                                        <!-- <li>configurar publicacion</li>
+                                        <li>eliminar publicacion</li> -->
+                                        <li>denunciar publicacion</li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Enviar<i class="fas fa-paper-plane"></i></a></li>
+                    
+                            </ul>
+                        </nav>
+                    </header> 
+                
+
+                   <samp>5,septiembre 2019 </samp>
+                   <h2>pulicacion</h2>
+                   <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
+                   <a href="" class="post_usu">leer mas..</a>
+                   <div class="mensaje">
+                    <input type="text" value="" placeholder="Escribe un Comentario">
+                    <input type="button" value="Enviar" style=" border:solid; ">
+                  </div>
+                </div>
+             </div>
+         </article>
+ 
+         <!-- tercer articulo -->
+            <article class="post">
+                <div class="post-head">
+                    nombre usu <a href="">img usu</a>
+                    <div class="img-3"></div>
+                    <div class="post-body">
+                        <header>
+                            <nav class="nav">
+                                <ul class="men" >
+                                    <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
+                                    <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
+                                        <ul class="submen">
+                                            <!-- <li>configurar publicacion</li>
+                                            <li>eliminar publicacion</li> -->
+                                            <li>denunciar publicacion</li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Enviar<i class="fas fa-paper-plane"></i></a></li>
+                        
+                                </ul>
+                            </nav>
+                        </header> 
+                    <samp>5,septiembre 2019 </samp>
+                    <h2>pulicacion</h2>
+                    <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
+                    <a href="" class="post_usu">leer mas..</a>
+                    <div class="mensaje">
+                        <input type="text" value="" placeholder="Escribe un Comentario">
+                        <input type="button" value="Enviar" style=" border:solid; ">
+                    </div>
+                    </div>
+                </div>
+            </article>
+
+
+         <!-- post 4 -->
+                <article class="post">
+                    <div class="post-head">
+                        nombre usu <a href="">img usu </a>
+                        <div class="img-4"></div>
+                        <div class="post-body">
+                            <header>
+                                <nav class="nav">
+                                    <ul class="men" >
+                                        <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
+                                        <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
+                                            <ul class="submen">
+                                                <!-- <li>configurar publicacion</li>
+                                                <li>eliminar publicacion</li> -->
+                                                <li>denunciar publicacion</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Enviar<i class="fas fa-paper-plane"></i></a></li>
+                            
+                                    </ul>
+                                </nav>
+                            </header> 
+                                <samp>5,septiembre 2019 </samp>
+                                <h2>nom publicacion</h2>
+                                <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
+                                <a href="" class="post_usu">leer mas..</a>
+                                <div class="mensaje">
+                                    <input type="text" value="" placeholder="Escribe un Comentario">
+                                    <input type="button" value="Enviar" style=" border:solid; ">
+                                </div>
+                        </div>
+                    </div>
+                </article>
+ 
+         <!-- tercer articulo -->
+         <article class="post">
+             <div class="post-head">
+                 nombre usu <a href="">img usu</a>
+                 <div class="img-5"></div>
+                <div class="post-body">
+                 <header>
+                    <nav class="nav">
+                        <ul class="men" >
+                            <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
+                            <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
+                                <ul class="submen">
+                                    <!-- <li>configurar publicacion</li>
+                                    <li>eliminar publicacion</li> -->
+                                    <li>denunciar publicacion</li>
+                                </ul>
+                            </li>
+                            <li><a href="">Enviar<i class="fas fa-paper-plane"></i></a></li>
+                
+                        </ul>
+                    </nav>
+                
+                 </header> 
+                   <samp>5,septiembre 2019 </samp>
+                   <h2>pulicacion</h2>
+                   <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
+                   <a href="" class="post_usu">leer mas..</a>
+                   <div class="mensaje">
+                    <input type="text" value="" placeholder="Escribe un Comentario">
+                    <input type="button" value="Enviar" style=" border:solid; ">
+                  </div>
+                </div>
+             </div>
+             <!-- publicacion6 -->
+        </article><article class="post">
+            <div class="post-head">
+                 nombre usu <a href="">img usu </a>
+                <div class="img-6"></div>
+                    <div class="post-body">
+                    
+                        <header>
+                                <nav class="nav">
+                                    <ul class="men" >
+                                        <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
+                                        <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
+                                            <ul class="submen">
+                                                <!-- <li>configurar publicacion</li>
+                                                <li>eliminar publicacion</li> -->
+                                                <li>denunciar publicacion</li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Enviar<i class="fas fa-paper-plane"></i></a></li>
+                            
+                                    </ul>
+                                </nav>
+                            </header> 
+                        <samp>5,septiembre 2019 </samp>
+                        <h2>pulicacion</h2>
+                        <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
+                        <a href="" class="post_usu">leer mas..</a>
+                        <div class="mensaje">
+                                <input type="text" value="" placeholder="Escribe un Comentario">
+                                <input type="button" value="Enviar" style=" border:solid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+ 
+     </div>
+ </section>
+</body>
+</html>

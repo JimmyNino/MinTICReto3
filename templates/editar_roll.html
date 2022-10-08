@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Super Administrador</h1>
+     <!-- menu -->
+     <header>
+          <nav class="navegacion">
+              <ul class="menu">
+      
+                  <li class="espacio"><i class="fas fa-cog"><a href="/configuracion"  rel="noopener noreferrer">Configuración</a></i></li>
+      
+      
+                  <li class="espacio"><i class="fas fa-search">Eliminar</i> 
+      
+                      <ul class="submenu">
+                          <li><a href="/buscar/publi">publicacion</a></li>
+                          <li><a href="/eliminar/usuario">usuario</a></li>
+                      </ul>
+                  </li>
+                  <li class="espacio">
+                    <i class="fas fa-sign-out-alt"><a href="/logout"  rel="noopener noreferrer">Cerrar secion</a></i>
+                  </li>
+      
+                   <li class="espacio">
+                       <i class="fas fa-home" ><a href="/admin"  rel="noopener noreferrer">Inicio</a></i>
+                  </li>
+              </ul>
+         </nav >
+      </header>
+    <br>
+    <div>
+        <form action="/guardar/roll/{{ datos}}" method="post">
+        
+            <table>
+                <thead>
+                    <style>td{border-color: black;
+                        border-style: double;
+                        padding: 10px;}
+
+                </style>
+                    <tr>
+                       <td>nombre de usuario</td>
+                       <td>telefono</td> 
+                       <td>nombre</td> 
+                       <td>correo</td>
+                       <td>id</td>
+                       <td>rol</td>  
+                       <td>cambiarroll</td>
+                       <td>confirmar</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dato in datos %} 
+                    <tr>
+                            <!--nombre de usuario--><td>{{dato.4 }}</td>
+                            <!--telefono--><td>{{dato.6 }}</td>
+                            <!--nombre--><td>{{dato.1}}</td> 
+                            <!--correo--><td>{{dato.2 }}</td>
+                            <!--id--><td> <input  type="text" name="txtid" id="txtid" value="{{dato.0 }}" style="border: bisque;"></td>
+                                 <!--rol--><td>{{dato.5 }}</td> 
+                                <!--id--><td> <input type="text" name="txtroll" id="txtroll" value="{{ dato.5 }}"> </td>
+                                <!--id--><td><input type="submit" value="cambiar"></td>
+
+                        <!-- <td>{{dato.7}}</td> -->
+
+                    </tr>
+                   {%endfor %}
+                   <div> {% with messages= get_flashed_messages()%}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    </div>     
+        </form>  
+    </div>
+
+</body>
+</html>
