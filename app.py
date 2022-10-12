@@ -1,9 +1,20 @@
 from datetime import date,datetime
-from flask import Flask,render_template,request,redirect,flash,session,send_from_directory,url_for
+from flask import Flask,render_template,request,redirect,flash,session,send_from_directory, g, make_response, jsonify, url_for
 from werkzeug.utils import escape, secure_filename
 import sqlite3 ,hashlib,os
 import pathlib
 from os import remove
+import email
+import functools
+from re import X
+from unittest import result
+from email import message
+from db import get_db
+from email.message import EmailMessage
+import smtplib
+import os
+from db import get_db, close_db
+
 
 
 
@@ -29,15 +40,26 @@ def crear_usuario():
     numero=escape(request.values["txtnum"])
     nom_usu=escape(request.values["txtnomusu"])
     contraseña=escape(request.values["txtcon"])
-    with sqlite3.connect("basedatos.db") as con:
-        encrp = hashlib.sha256(contraseña.encode('utf-8'))
-        pass_enc = encrp.hexdigest()
-        cur=con.cursor()
-        # roll 1=usuario 2=administrador 3=super administrador
-        cur.execute("INSERT INTO usuario (nombre,correo,numero,nom_usu,contraseña,roll) VALUES (?,?,?,?,?,?)",[nom,correo,numero,nom_usu,pass_enc,1])
-        con.commit()
+
+    try:
+        db = get_db()
+        db.execute('INSERT INTO usuario (nombre, correo, contraseña,nom_usu,roll,numero) VALUES (?,?,?,?,?,?)',
+                (nom, correo, contraseña, nom_usu, '1' ,numero)
+            )
+        db.commit()
+        close_db()
         flash("Guardado con éxito")
-        return redirect("/registrarse")
+    except:
+        flash("No se logro guardar con éxito")
+    #with sqlite3.connect("basedatos.db") as con:
+    #    encrp = hashlib.sha256(contraseña.encode('utf-8'))
+    #    pass_enc = encrp.hexdigest()
+    #    cur=con.cursor()
+        # roll 1=usuario 2=administrador 3=super administrador
+    #    cur.execute("INSERT INTO usuario (nombre,correo,numero,nom_usu,contraseña,roll) VALUES (?,?,?,?,?,?)",[nom,correo,numero,nom_usu,pass_enc,1])
+    #    con.commit()
+    #    flash("Guardado con éxito")
+    return redirect("/registrarse")
 
 @app.route("/",methods=["POST","GET"])
 def intro():
@@ -65,6 +87,8 @@ def login():
 # verificar datos
     nom_usu=escape(request.values["txtnom_usu"])
     contraseña=escape(request.values["contra"])
+
+
     with sqlite3.connect("basedatos.db") as con:
         con.row_factory=sqlite3.Row #list base datos
         encrp = hashlib.sha256(contraseña.encode('utf-8'))
