@@ -8,31 +8,31 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/instagram2/instagram2/static/css/style.css">
     <link rel="stylesheet" href="../static/css/estilo.css">
+    <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="./styles/Noto_Sans_Mono/NotoSansMono-VariableFont_wdth,wght.ttf">
 </head>
 <body>
     <div class="menu">
         <div class="container container2">
           <div class="nav">
-            <img src="../static/img/social-design-girls-name.png">
+            <img src="../static/img/Titulo.PNG">
             <nav>
-                <ul>
-                  <li><a href="/inicio"><span class="material-icons">home</span></a></li>
-                  <li><a href="/mensajes/Usu"><span class="material-icons">inbox</span></a></li>
-                  <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
-                  <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
-                  <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
-                  <li><a href="/crearpublicacion"><span class="material-icons">add</span></a></li>
-                  <li><a href="/logout"><span class="material-icons">logout</span></a></li>
-                </ul>
-              </nav>
+              <ul>
+                <li><a href="/inicio"><span class="material-icons">home</span></a></li>
+                <li><a href="/mensajes"><span class="material-icons">inbox</span></a></li>
+                <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
+                <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
+                <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
+                <li><a href="/crearpublicacion"><span class="material-icons">add</span></a></li>
+                <li><a href="/logout"><span class="material-icons">logout</span></a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </div>
-
+    </div>
     <!-- editar perfil -->
     <div class="editar-perfil">
-        <div class="ed">Editar Perfil
+        <div class="ed">
             <ul><form action="/configuracion/usuario" method="post" >
                 <div>
                     <h3>Editar Perfil</h3>
@@ -47,7 +47,6 @@
 
                     <label for="">Nombre </label>
                     <input required type="text" id="tNom" name="tNom">
-               
                     <label for="">Correo</label>
                     <input required type="email" id="tcorreo" name="tcorreo">
                     <br>
@@ -56,8 +55,6 @@
                 </div>
 
                 <input type="submit" value="Editar">
-
-            
                 <br>
                 <div>
                 {% with messages= get_flashed_messages()%}
@@ -67,9 +64,7 @@
                 {% endfor %}
                 {% endif %}
                 {% endwith %}
-                
                 </div>
-                    
             </form></ul>
             </li>
             <!-- cambiar contraseña -->

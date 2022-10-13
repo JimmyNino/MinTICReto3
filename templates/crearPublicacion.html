@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear publicación</title>
+    <title>CREAR PUBLICACIÓN</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css" />
 </head>
@@ -12,11 +12,11 @@
   <div class="menu">
     <div class="container container2">
       <div class="nav">
-        <img src="../static/img/social-design-girls-name.png">
+        <img src="../static/img/Titulo.PNG">
         <nav>
           <ul>
-            <li><a href="/configuracion"><span class="material-icons">home</span></a></li>
-            <li><a href="/mensajes/Usu"><span class="material-icons">inbox</span></a></li>
+            <li><a href="/inicio"><span class="material-icons">home</span></a></li>
+            <li><a href="/mensajes"><span class="material-icons">inbox</span></a></li>
             <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
             <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
             <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
@@ -31,11 +31,11 @@
       
       <form action="/crear_publicacion"  method="post" enctype = "multipart/form-data">
         <div class="contenedor">
-            <h2>crear publicación</h2>
+            <h2>CREAR PUBLICACIÓN</h2>
             <br>
             <div>
 
-               <label for="">nombre de publicación</label>
+               <label for="">Nombre de publicación</label>
                <input type="text" name="tituloptxt" id="tituloptxt" placeholder="escribe nombre de publicación" required>
                <br>
                <!----------- img------------->
@@ -48,15 +48,15 @@
                    </div>
                </div>
                <br>
-               <label for="">contenido de la publicación: </label> <textarea name="destxt" id="destxt" placeholder="Descripcion de publicación" required ></textarea>
+               <label for="">Contenido de la publicación: </label> <textarea name="destxt" id="destxt" placeholder="Descripcion de publicación" required ></textarea>
                <br>
-               <label for="">fecha de la publicación : </label><h5 id="fecha" name="fecha" > <script>(function(){
+               <label for="">Fecha de la publicación : </label><h5 id="fecha" name="fecha" > <script>(function(){
                 var fecha=new Date();
                 m=fecha.getMonth();
                 mo=m+1
                 document.write(fecha.getDate()+"/"+mo+"/"+fecha.getFullYear());
                 }())</script></h5>
-               <input type="submit" value="publicar">
+               <input type="submit" value="Subir publicación">
             </div>
           {% with messages= get_flashed_messages()%}
           {% if messages %}

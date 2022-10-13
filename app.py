@@ -29,7 +29,7 @@ CARPETA= os.path.join('imagenes')
 app.config['CARPETA']=CARPETA
 @app.route("/imagenes/<nombredelafoto>",methods=["GET","POST"])
 def imagenes(nombredelafoto):
-    return send_from_directory("imagenes/",nombredelafoto)    
+    return send_from_directory("imagenes/",nombredelafoto)
 
 # =====================registrarse==============:)
 @app.route("/registrarse/usuario",methods=["GET","POST"])

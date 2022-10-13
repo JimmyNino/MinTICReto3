@@ -5,45 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>busqueda de usuario</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e4d2989fa4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estiloBS.css') }}" type="text/css">
+    <link rel="stylesheet" href="../static/css/style.css" />
     <script src="../static/js/buscarUsuario.js" ></script>
 </head>
 <body>
     <!-- titulo -->
-    <h1>Social Lampropeltis alterna- Perfil</h1>  
+    <div class="menu">
+        <div class="container container2">
+          <div class="nav">
+            <img src="../static/img/Titulo.PNG">
+            <nav>
+              <ul>
+                <li><a href="/inicio"><span class="material-icons">home</span></a></li>
+                <li><a href="/mensajes"><span class="material-icons">inbox</span></a></li>
+                <li><a href="/buscar/Usu"><span class="material-icons">search</span></a></li>
+                <li><a href="/configuracion"><span class="material-icons">settings</span></a></li>
+                <li><a href="/perfil/usuario"><span class="material-icons">person_outline</span></a></li>
+                <li><a href="/crearpublicacion"><span class="material-icons">add</span></a></li>
+                <li><a href="/logout"><span class="material-icons">logout</span></a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
 
 <!-- menu -->
-<header>
-    <nav class="navegacion">
-        <ul class="menu">
 
-            <li class="espacio"><i class="fas fa-cog"><a href="/configuracion" target="_blank" rel="noopener noreferrer">Configuración</a></i></li>
-
-            <li class="espacio"><i class="fas fa-user"><a href="/perfil/usuario" target="_blank" rel="noopener noreferrer">Perfil Usuario</a></i></li>
-
-            <li class="espacio"><i class="fas fa-search">Buscar</i> 
-
-                <ul class="submenu">
-                    <li><a href="/buscar/publi">publicacion</a></li>
-                    <li><a href="/buscar/Usu">usuario</a></li>
-                </ul>
-            </li>
-            <li class="espacio">
-                <i class="fas fa-comment-alt"><a href="/mensajes/Usu" target="_blank" rel="noopener noreferrer">Mensajes</a></i>
-            </li>
-            <li class="espacio">
-                 <i class="fas fa-plus"><a href="/crear/publicacion" target="_blank" rel="noopener noreferrer">Crear publicacion</a></i>
-            </li>
-
-             <li class="espacio">
-                 <i class="fas fa-home" ><a href="/inicio" target="_blank" rel="noopener noreferrer">Inicio</a></i>
-            </li>
-        </ul>
-   </nav >
-</header>
 <!-- buscar usuario -->
-<header class="buscar">
+<body>
+
+
     <input type="search" id="input-search" placeholder="Buscar aqui">
     <div class="content-search">
         <div class="content-table">
@@ -80,12 +74,13 @@
         </table>
         </div>
     </div>
-</header>
-
+</body>
 <!-- usuarios -->
 
  <!-- publicacion1 -->
- 
+
+
+
  <section class="post_list">
     <div class="cotent">
          <article class="post">
@@ -93,10 +88,8 @@
                  nombre usu <a href="">img usu</a>
                  <div class="img-1"></div>
                  <div class="post-body">
-                    
-                    <header>
-                        <nav class="nav">
-                            <ul class="men" >
+                        <nav>
+                            <ul >
                                 <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
                                 <li><a href="">Menu<i class="fas fa-ellipsis-v"></i></a>
                                     <ul class="submen">
@@ -109,14 +102,14 @@
                     
                             </ul>
                         </nav>
-                    </header>  
-                    <samp>5,septiembre 2019 </samp>
-                    <h2>pulicacion</h2>
-                     <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
-                    <a href="" class="post_usu">leer mas..</a>
+      
+                    <samp>5,septiembre 2029 </samp>
+                    <h2>Publicación</h2>
+                     <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus? <br><a href="" class="post_usu">leer mas..</a></p>
+                    
                     <div class="mensaje">
                         <input type="text" value="" placeholder="Escribe un Comentario">
-                        <input type="button" value="Enviar" style=" border:solid; ">
+                        <input type="button" value="Enviar" style=" text-align: center; ">
                     </div>
                  </div>
              </div>
@@ -128,7 +121,7 @@
                  nombre usu <a href="">img usu </a>
                  <div class="img-2"></div>
                 <div class="post-body">
-                    <header>
+               
                         <nav class="nav">
                             <ul class="men" >
                                 <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
@@ -143,7 +136,7 @@
                     
                             </ul>
                         </nav>
-                    </header> 
+                    
                 
 
                    <samp>5,septiembre 2019 </samp>
@@ -164,7 +157,7 @@
                     nombre usu <a href="">img usu</a>
                     <div class="img-3"></div>
                     <div class="post-body">
-                        <header>
+                     
                             <nav class="nav">
                                 <ul class="men" >
                                     <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
@@ -179,7 +172,7 @@
                         
                                 </ul>
                             </nav>
-                        </header> 
+                    
                     <samp>5,septiembre 2019 </samp>
                     <h2>pulicacion</h2>
                     <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
@@ -199,7 +192,7 @@
                         nombre usu <a href="">img usu </a>
                         <div class="img-4"></div>
                         <div class="post-body">
-                            <header>
+                      
                                 <nav class="nav">
                                     <ul class="men" >
                                         <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
@@ -214,7 +207,7 @@
                             
                                     </ul>
                                 </nav>
-                            </header> 
+                   
                                 <samp>5,septiembre 2019 </samp>
                                 <h2>nom publicacion</h2>
                                 <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
@@ -233,7 +226,7 @@
                  nombre usu <a href="">img usu</a>
                  <div class="img-5"></div>
                 <div class="post-body">
-                 <header>
+          
                     <nav class="nav">
                         <ul class="men" >
                             <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
@@ -249,7 +242,7 @@
                         </ul>
                     </nav>
                 
-                 </header> 
+          
                    <samp>5,septiembre 2019 </samp>
                    <h2>pulicacion</h2>
                    <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
@@ -267,7 +260,7 @@
                 <div class="img-6"></div>
                     <div class="post-body">
                     
-                        <header>
+              
                                 <nav class="nav">
                                     <ul class="men" >
                                         <li><a href="">Calificacion<i class="far fa-heart"></i></a></li>
@@ -282,7 +275,7 @@
                             
                                     </ul>
                                 </nav>
-                            </header> 
+                    
                         <samp>5,septiembre 2019 </samp>
                         <h2>pulicacion</h2>
                         <p>DESCRICION de la publicacion Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, culpa nesciunt molestias corporis pariatur ipsum at, labore expedita excepturi, cumque eos! Odit dolor aliquam praesentium cum hic asperiores cumque ducimus?</p>
@@ -298,5 +291,6 @@
  
      </div>
  </section>
+
 </body>
 </html>
